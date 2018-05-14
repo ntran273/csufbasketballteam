@@ -11,8 +11,8 @@
         $teamid = (int) $_POST['team_id2'];
         $teamid2 = (int) $_POST['team_id3'];
 
-        if( empty($teamid) ) $team = null;
-        if( empty($teamid2) ) $team = null;
+        if( empty($teamid) ) $teamid = null;
+        if( empty($teamid2) ) $teamid2 = null;
 
         if( empty($StartDate) ) $StartDate = null;
         if( empty($TimeSchedule)  ) $TimeSchedule  = null;
