@@ -1,0 +1,57 @@
+/*if we use css*/
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #2B2D42
+}
+
+li {
+  color: white;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 50px 50px;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+}
+
+
+div.cd h1 {
+  font-size: 50px;
+}
+
+div.cd {
+  background-image: url("https://ak5.picdn.net/shutterstock/videos/9511835/thumb/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  margin: auto;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}
