@@ -1,40 +1,8 @@
 <?php
 
     require_once('db.php');
-
-    $selectOption = (string) $_POST['teamname'];
-
-    // $test = 'UCLA';
-    $query = "SELECT Player.PlayerId, Player.Name_First, Player.Name_Last, Player.Street, Player.City, Player.State, Player.Country, Player.ZipCode, Team.TeamName
-    FROM PLAYER INNER JOIN TEAM ON
-    PLAYER.PlayerTeamId = Team.TeamId AND team.TeamName = '$selectOption'
-    ORDER BY Player.PlayerId;";
-
-    $mysqli = new mysqli(DATA_BASE_HOST, USER_NAME, USER_PASSWORD, DATA_BASE_NAME);
-    // Check connection
-    if($mysqli === false){
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
-
-    if ($stmt = $mysqli->prepare($query)) {
-      $stmt->execute();
-      $stmt->store_result();
-      $stmt->bind_result(
-        $PlayerId,
-        $Name_First,
-        $Name_Last,
-        $Street,
-        $City,
-        $State,
-        $Country,
-        $Zipcode,
-        $TeamN
-      );
-    }
-
-
     session_start();
-
+    
     /*Displayer user information*/
     //Check if user is logged in using the session variable
     if($_SESSION['logged_in'] != 1){
@@ -42,16 +10,41 @@
       header("location: error.php");
     }
     else{
-      $first_name = $_SESSION['first_name'];
-      $last_name = $_SESSION['last_name'];
-      $email = $_SESSION['email'];
       $type = $_SESSION['type'];
-
     }
 
     if($type == 'O'){
         session_destroy();
         header("location: index.php");
+     }
+     $selectOption = (string) $_POST['teamname'];
+
+     // $test = 'UCLA';
+     $query = "SELECT Player.PlayerId, Player.Name_First, Player.Name_Last, Player.Street, Player.City, Player.State, Player.Country, Player.ZipCode, Team.TeamName
+     FROM PLAYER INNER JOIN TEAM ON
+     PLAYER.PlayerTeamId = Team.TeamId AND team.TeamName = '$selectOption'
+     ORDER BY Player.PlayerId;";
+
+     $mysqli = new mysqli(DATA_BASE_HOST, USER_NAME, USER_PASSWORD, DATA_BASE_NAME);
+     // Check connection
+     if($mysqli === false){
+         die("ERROR: Could not connect. " . mysqli_connect_error());
+     }
+
+     if ($stmt = $mysqli->prepare($query)) {
+       $stmt->execute();
+       $stmt->store_result();
+       $stmt->bind_result(
+         $PlayerId,
+         $Name_First,
+         $Name_Last,
+         $Street,
+         $City,
+         $State,
+         $Country,
+         $Zipcode,
+         $TeamN
+       );
      }
 
 ?>

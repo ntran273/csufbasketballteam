@@ -13,7 +13,6 @@ if(!isset($_SESSION))
     header("location: error.php");
   }
   else{
-    $email = $_SESSION['email'];
     $type = $_SESSION['type'];
   }
   // Connect to database
