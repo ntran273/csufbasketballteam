@@ -13,7 +13,6 @@
       header("location: error.php");
     }
     else{
-      $email = $_SESSION['email'];
       $type = $_SESSION['type'];
     }
     if($type != 'ED'){

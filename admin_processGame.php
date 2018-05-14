@@ -1,11 +1,5 @@
 <!-- CREATE GAMES -->
 <?php
-// <!-- GameID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-// StartDate DATE,
-// TimeSchedule TIME,
-// ATeamID INT(10) UNSIGNED NOT NULL,
-// BTeamID INT(10) UNSIGNED NOT NULL, -->
-
         $StartDate   = trim( preg_replace("/\t|\R/",' ',$_POST['StartDate']) );
         $TimeSchedule     = trim( preg_replace("/\t|\R/",' ',$_POST['TimeSchedule']));
         $teamid = (int) $_POST['team_id2'];
